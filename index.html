@@ -24,20 +24,10 @@ $(document).ready(function() {
 
 	// ajax stuff
 	$('body').on('click', '#call-script', function() {
-		$.ajax('potter.json', {
-		contentType: 'application/json',
-		dataType: 'json',
+		$.ajax({
+		url:'title.txt',
 		success: function(result) {
-			var allCharacters = $.map(result, function(object, index) {
-				var character = $('<div></div>');
-				$(character).append('<h2>' + object.name + '</h2>');
-				$(character).append('<p>' + object.bio + '</p>');
-				// $.map() builds a new array - each character is added
-				// to that array
-				return character;
-			});
-			// allCharacters is the new array
-			$('body').append(allCharacters);
+			$('#title').text(url);
 		},
 		error: function(request, errorType, errorMessage) {
       alert('Error: ' + errorType + ' With message: ' + errorMessage);
