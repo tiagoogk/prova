@@ -17,12 +17,10 @@
 	<button id="clear-divs">Remove título</button>
 </section>
 
-<!-- only scripts below this --> 
 <script src="jquery.min.js"></script>
 <script>
 $(document).ready(function() {
 
-	// ajax stuff
 	$('body').on('click', '#call-script', function() {
 		$.ajax({
 		url:'title.txt',
@@ -33,17 +31,13 @@ $(document).ready(function() {
 		error: function(request, errorType, errorMessage) {
       alert('Error: ' + errorType + ' With message: ' + errorMessage);
     },
-    timeout: 3000
 		});
 	});
-
-	// remove what was added
 	$('body').on('click', '#clear-divs', function() {
-		$('#title').text('');
+		$('#title').text('\n');
 	});
 
-}); // end document ready
+});
 </script>
-<!-- potter.json from https://github.com/efekarakus/potter-network -->
 </body>
 </html>
