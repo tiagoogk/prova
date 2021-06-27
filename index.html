@@ -26,8 +26,9 @@ $(document).ready(function() {
 	$('body').on('click', '#call-script', function() {
 		$.ajax({
 		url:'title.txt',
-		success: function(result) {
-			$('#title').text(url);
+		dataType:"text",
+		success: function(data) {
+			$('#title').text(data);
 		},
 		error: function(request, errorType, errorMessage) {
       alert('Error: ' + errorType + ' With message: ' + errorMessage);
